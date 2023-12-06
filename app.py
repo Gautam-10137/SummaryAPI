@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import requests
 from transformers import pipeline
-
+import os
 app = Flask(__name__)
 
 LANGUAGE_TOOL_API_URL = 'https://api.languagetool.org/v2/check'
@@ -39,5 +39,7 @@ def summarize_and_correct():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
 
