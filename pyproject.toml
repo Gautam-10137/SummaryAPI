@@ -1,0 +1,20 @@
+# pyproject.toml
+
+[build-system]
+requires = ["poetry>=1.0"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "text_summarizer_app"
+version = "0.1.0"
+description = "Text Summarizer Application"
+authors = ["Gautam Pahwa"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+flask = "^2.0.0"
+requests = "^2.26.0"
+transformers = "^4.11.3"
+
+[tool.poetry.dev-dependencies]
+
